@@ -1,57 +1,15 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Deedy - One Page Two Column Resume
-% LaTeX Template
-% Version 1.2 (16/9/2014)
-%
-% Original author:
-% Debarghya Das (http://debarghyadas.com)
-%
-% Original repository:
-% https://github.com/deedydas/Deedy-Resume
-%
-% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
-%
-% This template uses several fonts not included with Windows/Linux by
-% default. If you get compilation errors saying a font is missing, find the line
-% on which the font is used and either change it to a font included with your
-% operating system or comment the line out to use the default font.
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% TODO:
-% 1. Integrate biber/bibtex for article citation under publications.
-% 2. Figure out a smoother way for the document to flow onto the next page.
-% 3. Add styling information for a "Projects/Hacks" section.
-% 4. Add location/address information
-% 5. Merge OpenFont and MacFonts as a single sty with options.
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% CHANGELOG:
-% v1.1:
-% 1. Fixed several compilation bugs with \renewcommand
-% 2. Got Open-source fonts (Windows/Linux support)
-% 3. Added Last Updated
-% 4. Move Title styling into .sty
-% 5. Commented .sty file.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Known Issues:
-% 1. Overflows onto second page if any column's contents are more than the
-% vertical limit
-% 2. Hacky space on the first bullet point on the second column.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\documentclass[]{deedy-resume-openfont}
+\documentclass[12pt]{deedy-resume-openfont}
 \usepackage{fancyhdr}
- \renewcommand{\baselinestretch}{1.2} 
+\usepackage{setspace}
+\large
+\setstretch{1.15}
+
 \pagestyle{fancy}
 \fancyhf{}
+
  
 \begin{document}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,36 +21,88 @@
  \href{mailto:a68krish@uwaterloo.ca}{a68krish@uwaterloo.ca}
 }
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%     COLUMN ONE
+%     COLUMN ONE    
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{minipage}[t]{0.33\textwidth} 
+\begin{minipage}[t] {0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+
+\runsubsection{ Software Developer}
+\descript{  Python, JavaScript, HTML, CSS}
+\descript{  iHayaNow, The University of Waterloo }
+\location{Sept 2020 - Present }
+\vspace{3mm} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Leading development of a website to connect Egyptian students with Canadian professionals
+\item Reduced monthly server costs by 55\% by configuring and migrating website to a Linux Apache server using Google Cloud
+\item Learned the Django web-development framework and made first changes to website within 4 days
+
+\end{tightemize}
+\sectionsep
+
+\runsubsection{ 3D Scanning Technician}
+\descript{  Python, 3D Scanning}
+\descript{  Aecon Industrial, The University of Waterloo }
+\location{January 2020 - April, 2020 }
+
+\vspace{1mm} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Decreased data collection time by 75\% and saved 40 staff-hours by creating data-collection and cleaning scripts in Python to collect data for more than 10,000 parts
+\item Received “Excellent” rating by co-workers for excellent communication and work ethic
+
+\end{tightemize}
+\sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PERSONAL PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Personal Projects}
+\subsection{ \href{https://tinyurl.com/yyjssdov}{How can we build the most fuel efficient car?}}
+\descript{ Python}
+\vspace{3mm} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Conducted linear regression inference on a dataset to determine the most fuel-efficient car design using Python and the Scikit-Learn library
+\item Prepared a dataset containing 43,156 rows, 83 columns and 477,061 missing values for analysis using the Numpy and Pandas libraries
+\end{tightemize}
+\sectionsep
+\subsection{\href{https://github.com/arjun-krishna1/Covid-19_contact_tracing}{COVID-19 Contact Tracing}}
+\descript{ C++}
+\vspace{0.5mm} % Hacky fix for awkward extra vertical space
+\vspace{1mm} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Implemented a Graph Data Structure using C++ to analyze the spread of COVID-19 among a population considering the interactions between them
+\item Wrote variations of the Breadth-First Search and Djikstra's Algorithms in C++ to test effectiveness of Physical Distancing and wearing masks to prevent the spread of COVID-19
+\end{tightemize}
+\end{minipage}
+\hspace{0.01\textwidth}
+\begin{minipage}[t]{0.32\textwidth} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     SKILLS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Skills}
-\subsection{Technical Skills}
-\descript{Proficient with:}
-Python \textbullet{}   C++ \textbullet{} JavaScript \textbullet{} HTML \\
-CSS
-\textbullet{} Git \textbullet{}  Data Collection \textbullet{} \\ Data ETL \\
-\vspace{3mm} %5mm vertical space
-\descript{Familiar:}
-MySQL \textbullet{}Matlab \textbullet{} C \textbullet{} \LaTeX \textbullet{} React \\
-TensorFlow
-\sectionsep
-
-\subsection{Soft Skills}
+\subsection{Languages}
+Python \textbullet{} JavaScript  \textbullet{} C++ 
 \vspace{2mm}
+\subsection{Technologies}
+HTML \textbullet{} CSS \textbullet{} SQL \textbullet{} Git \textbullet{} Linux \textbullet{} \\  Google Cloud
+\vspace{2mm}
+\subsection{Frameworks \& Libraries}
+Django\textbullet{} Pandas \textbullet{} NumPy \textbullet{} Scikit-Learn
 
-Problem Solving \textbullet{} Communication
-Organization
 
+\sectionsep
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,29 +111,18 @@ Organization
 
 \section{Education} 
 
-\subsection{University of waterloo}
+\subsection{The University of \\Waterloo}
 \vspace{2mm}
 \descript{BASc in Mechatronics Engineering}
-\location{January 2020 - Present}
+\location{September 2019 - Present}
 Extensive Coursework in: 
 \vspace{3mm}
 \begin{tightemize}
 \item Data Structures and Algorithms
-\item Robotics Programming
 \item Technical Writing
-\item Linear Algebra 
-\item Calculus \\
-Honors: President's Scholarship
+\item Mathematics
 \end{tightemize}
 \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     LINKS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Links} 
-Github:// \href{https://github.com/arjun-krishna1}{\bf arjun-krishna1} \\
-LinkedIn://  \href{https://www.linkedin.com/in/arjun-krishna-2001}{\bf arjun-krishna-2001} \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     AWARDS
@@ -131,81 +130,20 @@ LinkedIn://  \href{https://www.linkedin.com/in/arjun-krishna-2001}{\bf arjun-kri
 
 \section{Awards} 
 \vspace{1mm}
+
+\descript{The Fountainhead Essay Contest}
+\vspace{1mm} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
- \item Top 50 out of 3000 for The Fountainhead Essay Contest
- \item Recipient of the President's Scholarship from The University of Waterloo
+\item Selected as top 2\% of essay writers from 3000 international participants based on writing skills and logical deduction
+\end{tightemize}
+\vspace{1mm}
+\descript{Valedictorian}
+\begin{tightemize}
+ \item Voted valedictorian by a class of 300 students due to excellent leadership and communication skills
 
 \end{tightemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     COLUMN TWO
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \end{minipage} 
+
+
 \hfill
-\begin{minipage}[t]{0.66\textwidth} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     EXPERIENCE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Experience}
-\runsubsection{ Software Developer}
-\descript{| The University of Waterloo}
-\location{Sept 2020 - Present }
-\vspace{3mm} % Hacky fix for awkward extra vertical space
-\begin{tightemize}
-\item Building a React and Django application for  connecting University of Waterloo students  to medical services and Covid-19 information 
-\item Application will be available for use by 41,000 students
-\end{tightemize}
-\sectionsep
-
-\runsubsection{3D Scanning Technician}
-\descript{| Aecon Industrial}
-\location{January 2020 - April, 2020 }
-\vspace{1mm} % Hacky fix for awkward extra vertical space
-\begin{tightemize}
-\item Built data-collection and cleaning scripts in Python which collected data for more than 10,000 parts, decreased data collection time by 75\% and  saved 40+ man-hours
-\item Received “Excellent” rating by co-workers for excellent communication skills and independent work habits
-\end{tightemize}
-\sectionsep
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     PERSONAL PROJECTS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Personal Projects}\\
-\runsubsection{ \href{https://tinyurl.com/yyjssdov}{What affects a car's fuel efficiency?}}
-\descript{| Python}
-\vspace{3mm} % Hacky fix for awkward extra vertical space
-\begin{tightemize}
-\item Analyzed a car fuel efficiency data set to determine the car design that results in the best fuel efficiency
-\item Conducted data regularization, linear regression inferencing and correlation analysis
-\end{tightemize}
-\sectionsep
-\runsubsection{\href{https://github.com/arjun-krishna1/Covid-19_contact_tracing}{COVID-19 Contact Tracing}}
-\descript{| C++}
-\vspace{0.5mm} % Hacky fix for awkward extra vertical space
-\vspace{1mm} % Hacky fix for awkward extra vertical space
-\begin{tightemize}
-\item Built a toolkit to analyze the spread of COVID-19 among a population considering the interactions between them
-\item Created a Graph Data Structure and implemented various Graph traversal and analysis algorithms  based on Breadth-First Search and Djikstra's Algorithm
-\end{tightemize}
-\sectionsep
-\vspace{0.5mm} % Hacky fix for awkward extra vertical space
-\runsubsection{\href{https://github.com/arjun-krishna1/what-makes-a-youtube-channel-popular}{What makes a YouTube channel popular?}}
-\descript{| Python}
-\vspace{0.5mm} % Hacky fix for awkward extra vertical space
-\begin{tightemize}
-\item Analyzed the YouTube channel data of the 300 most viewed YouTube channels to gain insights into the factors that lead to greater success on the platform
-\item Built a web-scraper to collect more than 1,000 elements of data
-\item Used Regression analysis and anomaly detection algorithms to answer this question
-\end{tightemize}
-\sectionsep
-
-
-\end{minipage} 
-\end{document}  \documentclass[]{article}
+\end{document}  \documentclass[12pt]{article}
